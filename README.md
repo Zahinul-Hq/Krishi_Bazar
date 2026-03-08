@@ -97,12 +97,7 @@ The system is divided into several functional modules:
 - Messaging & Feedback
 - Admin Control
 
-```
-docs/images/system_architecture.png
-```
-
-
-
+![System Architecture](docs/images/System_Architecture.png)
 
 ---
 
@@ -128,9 +123,7 @@ The system uses a relational database structure to manage marketplace data.
 | Admin | Administrative access |
 
 ### ER Diagram
-```
-docs/images/database_schema.png
-```
+![Database Schema](docs/images/database_schema.png)
 
 # Logistics Model
 
@@ -228,15 +221,11 @@ dotnet run
 
 ## Homepage
 
-docs/images/homepage.png
-
 ![Homepage](docs/images/homepage.png)
 
 ---
 
 ## Product Listing
-
-docs/images/product_listing.png
 
 ![Product Listing](docs/images/product_listing.png)
 
@@ -244,15 +233,11 @@ docs/images/product_listing.png
 
 ## Order Management
 
-docs/images/order_management.png
-
 ![Order Management](docs/images/order_management.png)
 
 ---
 
 ## Delivery Tracking
-
-docs/images/delivery_tracking.png
 
 ![Delivery Tracking](docs/images/delivery_tracking.png)
 
