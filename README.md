@@ -1,165 +1,267 @@
-# KrishiBazaarProject
-Krishi Bazaar — Local Farmer Marketplace
+# Krishi Bazaar
+### A Local Farmer Marketplace
 
-A full-stack agricultural marketplace that connects farmers directly with buyers, enabling transparent pricing, efficient order management, and structured logistics through a hub-based delivery network.
+Krishi Bazaar is a web-based agricultural marketplace that connects **farmers directly with buyers**, eliminating unnecessary intermediaries and improving transparency in agricultural trade.  
 
-The platform eliminates traditional middlemen by allowing farmers to sell products directly to consumers while the system manages product listings, orders, payments, logistics routing, messaging, and reviews.
+The platform enables farmers to list products, buyers to place orders, and administrators to manage logistics through a **hub-based delivery network** designed to support inter-city agricultural distribution.
 
-Developed using .NET / ASP.NET with C# and SQL Server in Visual Studio 2022.
+This project was developed as part of the **Information System Design & Software Engineering Lab (CSE3224)** course at **Ahsanullah University of Science and Technology (AUST)**.
 
-Table of Contents
+---
 
-Overview
+# Table of Contents
 
-System Features
+- Overview
+- Features
+- System Architecture
+- Database Design
+- Logistics Model
+- Technology Stack
+- Project Structure
+- Installation
+- Usage
+- Screenshots
+- Future Improvements
+- License
 
-System Architecture
+---
 
-Logistics Model
+# Overview
 
-Database Design
+Agricultural markets often involve multiple intermediaries, which reduces profit margins for farmers and increases prices for consumers.  
 
-System Modules
+Krishi Bazaar addresses this problem by providing a **digital marketplace where farmers can directly sell products to buyers** while integrating a structured **hub-based logistics system** to ensure efficient delivery.
 
-Technology Stack
+The system includes modules for:
 
-Project Structure
+- User registration and authentication
+- Product management
+- Order processing
+- Payment tracking
+- Delivery management
+- Product reviews and ratings
 
-Installation Guide
+---
 
-Screenshots
+# Features
 
-Future Improvements
+## User Management
+- Buyer and farmer registration
+- Login authentication
+- Profile management
+- Location-based address storage
 
-Contributors
+## Product Marketplace
+- Farmers can upload agricultural products
+- Category-based product organization
+- Product descriptions and photos
+- Price and quantity management
 
-License
+## Order Processing
+- Buyers can purchase products
+- Automatic price calculation
+- Order tracking system
+- Order status management
 
-Overview
+## Payment Tracking
+- Payment records stored per order
+- Payment method tracking
+- Payment status verification
 
-Agricultural supply chains often suffer from inefficiencies caused by intermediaries, lack of price transparency, and poor logistics coordination. Krishi Bazaar addresses these problems by providing a digital marketplace where farmers can list their products and buyers can place orders directly.
+## Review and Rating System
+- Buyers can review purchased products
+- Rating system for product quality
+- Feedback mechanism for marketplace improvement
 
-The system integrates commerce functionality with a structured logistics pipeline that routes orders through secondary hubs and primary hubs before final delivery.
+## Hub-Based Delivery System
+A multi-stage logistics network enables efficient distribution across regions using **Primary and Secondary hubs**.
 
-The system workflow includes:
+Delivery stages include:
 
-Farmer registers and uploads agricultural products
+1. Seller → Nearby Secondary Hub  
+2. Secondary Hub → Primary Hub  
+3. Inter-city hub transfer  
+4. Primary Hub → Buyer-side Secondary Hub  
+5. Last-mile delivery to customer
 
-Buyers browse and purchase products
+---
 
-Orders are recorded and payment is processed
+# System Architecture
 
-Admin assigns delivery hubs based on location
+The system is divided into several functional modules:
+- User Management
+- Product Management
+- Order Processing
+- Payment Processing
+- Delivery & Logistics
+- Messaging & Feedback
+- Admin Control
 
-Products move through the hub network
+docs/images/system_architecture.png
 
-Last-mile delivery completes the order
 
-Buyers submit ratings and reviews
 
-The platform also includes a messaging system, allowing buyers and farmers to communicate directly.
 
-The complete data flow of the system was designed using structured diagrams described in the project documentation. 
+---
 
-A104
+# Database Design
 
-System Features
-User Management
+The system uses a relational database structure to manage marketplace data.
 
-User registration and login
+### Main Entities
 
-Role-based accounts (Buyer / Farmer)
+| Entity | Description |
+|------|------|
+| User | Stores buyer and farmer accounts |
+| Product | Agricultural products listed by farmers |
+| Category | Product classification |
+| Order | Order records from buyers |
+| Transaction | Payment information |
+| Delivery | Delivery tracking data |
+| Location | Geographic address data |
+| PrimaryHub | Major logistics hubs |
+| SecondaryHub | Local distribution hubs |
+| RatingAndReview | Product feedback |
+| UserMessage | Communication between users |
+| Admin | Administrative access |
 
-Profile and address management
+### ER Diagram
+docs/images/database_schema.png
 
-Secure authentication
+# Logistics Model
 
-Product Marketplace
+Krishi Bazaar uses a **hub-based logistics architecture** to support efficient delivery across different regions.
 
-Farmers can upload products
-
-Product categories
-
-Pricing and quantity management
-
-Product descriptions and images
-
-Order Management
-
-Buyers can place orders
-
-Order tracking
-
-Quantity selection
-
-Total price calculation
-
-Payment Tracking
-
-Transaction record per order
-
-Payment method storage
-
-Payment confirmation and status tracking
-
-Messaging System
-
-Direct communication between buyers and farmers
-
-Message timestamps
-
-Conversation history
-
-Review and Rating System
-
-Buyers can review purchased products
-
-Rating scores
-
-Written feedback
-
-Hub-Based Delivery System
-
-Orders move through a structured logistics pipeline:
-
-Seller → Local Secondary Hub → Regional Primary Hub → Destination Primary Hub → Local Secondary Hub → Buyer Delivery
-
-This enables scalable distribution across cities.
-
-System Architecture
-
-The system consists of several interacting modules:
-
-Module	Responsibility
-User Management	Registration, authentication, profiles
-Product Management	Product listings and inventory
-Order Processing	Order creation and tracking
-Payment System	Transaction management
-Delivery System	Hub assignment and delivery tracking
-Messaging	Buyer–seller communication
-Review System	Product feedback
-Logistics Model
-
-Krishi Bazaar uses a multi-hub delivery architecture.
-
-Secondary Hub
-
-Local distribution center near the farmer or buyer.
-
+The process flow:
+Farmer
+  ↓
+Secondary Hub (Seller Region)
+  ↓
 Primary Hub
+  ↓
+Primary Hub (Destination City)
+  ↓
+Secondary Hub (Buyer Region)
+  ↓
+Customer Delivery
 
-Major regional logistics center responsible for inter-city transfers.
 
-Delivery Flow
+---
 
-Seller sends product to nearby Secondary Hub
+# Technology Stack
 
-Secondary hub forwards to Primary Hub
+| Layer | Technology |
+|------|------|
+| Backend | ASP.NET |
+| Language | C# |
+| Framework | .NET |
+| Database | SQL Server |
+| IDE | Visual Studio 2022 |
+| Version Control | Git |
+| Repository Hosting | GitHub |
 
-Primary hub performs inter-city transfer
+---
 
-Destination primary hub sends to buyer's Secondary Hub
+# Project Structure
+KrishiBazaar
+│
+├── Controllers
+│
+├── Models
+│
+├── Views
+│
+├── Database
+│
+├── wwwroot
+│   ├── css
+│   ├── js
+│   └── images
+│
+├── docs
+│   └── images
+│
+├── README.md
+├── KrishiBazaar.sln
+└── .gitignore
 
-Last-mile delivery completes the order
 
-This design improves scalability and delivery coordination.
+---
+
+# Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/krishi-bazaar.git
+```
+Open the solution
+
+- Open KrishiBazaar.sln in Visual Studio 2022
+
+Restore dependencies
+
+```bash
+dotnet restore
+```
+Run the project
+
+```bash
+dotnet run
+```
+
+# Usage
+
+1. Register as a **Farmer** or **Buyer**
+2. Farmers upload agricultural products
+3. Buyers browse products and place orders
+4. Orders are processed through the hub-based logistics system
+5. Buyers receive delivery
+6. Buyers can review and rate products
+
+# Screenshots
+
+## Homepage
+
+docs/images/homepage.png
+
+![Homepage](docs/images/homepage.png)
+
+---
+
+## Product Listing
+
+docs/images/product_listing.png
+
+![Product Listing](docs/images/product_listing.png)
+
+---
+
+## Order Management
+
+docs/images/order_management.png
+
+![Order Management](docs/images/order_management.png)
+
+---
+
+## Delivery Tracking
+
+docs/images/delivery_tracking.png
+
+![Delivery Tracking](docs/images/delivery_tracking.png)
+
+
+# Future Improvements
+
+- Real-time delivery tracking
+- Secure Communication between sellers and buyers
+- Mobile application integration  
+- AI-based demand prediction for farmers  
+- Smart logistics route optimization  
+- Automated hub capacity management  
+- Secure payment gateway integration
+
+
+
+
