@@ -231,15 +231,15 @@ dotnet run
 
 ---
 
-## Order Management
+## Delivered Orders
 
-![Order Management](docs/images/order_management.png)
+![Delivered Orders](docs/images/delivered_orders.png)
 
 ---
 
-## Delivery Tracking
+## Order Tracking
 
-![Delivery Tracking](docs/images/delivery_tracking.png)
+![Order Tracking](docs/images/track_orders.png)
 
 
 # Future Improvements
