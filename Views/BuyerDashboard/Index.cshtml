@@ -1,0 +1,47 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Buyer Dashboard";
+}
+
+ <head> 
+     <title>@ViewData["Title"]</title> 
+     <link rel="stylesheet" href="~/css/BuyerDashboard/Index.css" /> 
+ </head>
+
+<!-- Main Content -->
+<div class="content-container">
+    <nav class="sidebar">
+        <h3 class="sidebar-title">Dashboard</h3>
+        <ul class="sidebar-menu">
+            <li><a href="@Url.Action("Index", "BuyerDashboard")">Home</a></li>
+            <li><a href="@Url.Action("TrackOrders", "BuyerDashboard")">Track My Orders</a></li>
+            <li><a href="@Url.Action("DeliveredOrders", "BuyerDashboard")">Delivered Orders</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="@Url.Action("Cart", "BuyerDashboard")">Cart</a></li>
+            <li>
+                <form asp-action="Logout" asp-controller="Auth" method="post" style="display: inline;">
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <h2>Available Products</h2>
+    <div class="product-details-container">
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="@product.Photos" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <p class="card-text">Price: @product.PricePerUnit</p>
+                            <a href="/BuyerDashboard/ProductDetails/@product.ProductID" class="btn btn-primary">View Details and Buy</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

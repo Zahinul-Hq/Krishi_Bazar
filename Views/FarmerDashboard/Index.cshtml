@@ -1,0 +1,46 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Farmer Dashboard";
+}
+
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/FarmerDashboard/Index.css" />
+</head>
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="sidebar-title">Farmer Dashboard</h3>
+        <ul class="sidebar-menu">
+            <li><a href="/FarmerDashboard/Create" class="btn btn-sidebar">Create</a></li>
+            <li><a href="/FarmerDashboard/Profile" class="btn btn-sidebar">Profile</a></li>
+            <li><a href="/BuyerDashboard/TrackOrders" class="btn btn-sidebar">Track Ordered Products</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Your Products</h2>
+
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="@product.Photos" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">@product.Description</p>
+                            <p class="card-text">Price: @product.PricePerUnit</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="/FarmerDashboard/Edit/@product.ProductID" class="btn btn-primary">Edit</a>
+                                <a href="/FarmerDashboard/Delete/@product.ProductID" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

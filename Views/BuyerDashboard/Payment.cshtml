@@ -1,0 +1,40 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Payment";
+}
+<head>
+
+    <link rel="stylesheet" href="~/css/BuyerDashboard/Payement.css" />
+</head>
+
+<div class="payment-container">
+    <div class="payment-header text-center">
+        <h2>Payment for @Model.ProductName</h2>
+        <p><strong>Total Price:</strong> @Model.TotalPrice</p>
+    </div>
+
+    <form method="post" asp-action="ProcessPayment" asp-controller="BuyerDashboard" class="payment-form">
+        <input type="hidden" name="orderId" value="@Model.OrderID" />
+
+        <div class="payment-method-section">
+            <label class="form-label">Select Payment Method:</label>
+
+            <div class="payment-method-option">
+                <input class="form-check-input" type="radio" name="paymentMethod" value="Card" required>
+                <label class="form-check-label">Card</label>
+            </div>
+
+            <div class="payment-method-option">
+                <input class="form-check-input" type="radio" name="paymentMethod" value="Mobile Banking" required>
+                <label class="form-check-label">Mobile Banking</label>
+            </div>
+
+            <div class="payment-method-option">
+                <input class="form-check-input" type="radio" name="paymentMethod" value="Cash On Delivery" required>
+                <label class="form-check-label">Cash On Delivery</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success pay-btn">Pay</button>
+    </form>
+</div>

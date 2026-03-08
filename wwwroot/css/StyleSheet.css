@@ -1,0 +1,62 @@
+﻿/* Sidebar Styles (SidebarStyles.css) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #2e7d32;
+    padding-top: 20px;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+    .sidebar-menu li {
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .sidebar-menu li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+            .sidebar-menu li a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 5px;
+                padding-left: 10px;
+            }
+
+/* Content Area Styles (e.g., ProductDetails.css) */
+.content-area {
+    margin-left: 240px;  Space for sidebar 
+    padding: 20px;
+    max-width: 1100px;
+}
+
+/*Product Card Styles for consistency across pages /*/
+/*.product-card {
+    display: flex;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    gap: 20px;
+}
+*/
+/* Adjust styles for other pages as needed... */

@@ -1,0 +1,169 @@
+﻿/* Main Container */
+.main-container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px; /* Reduced width */
+    height: 100vh;
+    background: #2e7d32;
+    padding-top: 20px;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+    .sidebar-menu li {
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .sidebar-menu li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+            .sidebar-menu li a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 5px;
+                padding-left: 10px;
+            }
+
+/* Product Details Container */
+.product-details-container {
+    margin-left: 240px; /* Adjusted margin to fit sidebar */
+    padding: 20px;
+    max-width: 1100px;
+}
+
+/* Product Card */
+.product-card {
+    display: flex;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Product Image - Reduced size */
+.product-image {
+    flex: 0 0 30%; /* Takes only 30% width */
+}
+
+    .product-image img {
+        width: 100%;
+        max-height: 220px; /* Limits height */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+/* Product Info - More space */
+.product-info {
+    flex: 1;
+}
+
+    .product-info h2 {
+        color: #2e7d32;
+        font-weight: bold;
+    }
+
+.description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.price, .stock {
+    font-size: 18px;
+    font-weight: bold;
+    color: #388e3c;
+    margin-top: 10px;
+}
+
+/* Farmer Details */
+.farmer-details {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Add to Cart Form */
+.add-to-cart-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+    .input-group label {
+        font-weight: bold;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Reviews Section */
+.reviews-section {
+    margin-top: 40px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 5px solid #2e7d32;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logout-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Match the hover effect of other buttons */
+}
+

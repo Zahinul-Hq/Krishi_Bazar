@@ -1,0 +1,47 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Create Product";
+}
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/FarmerDashboard/CreateProduct.css" />
+</head>
+<div class="container mt-4">
+    <h2>Create Product</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" name="Name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Description</label>
+            <textarea name="Description" class="form-control" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label>Price Per Unit</label>
+            <input type="number" name="PricePerUnit" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Available Quantity</label>
+            <input type="number" name="AvailableQuantity" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Upload Date</label>
+            <input type="datetime-local" name="UploadDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" readonly>
+        </div>
+        <div class="mb-3">
+            <label>Category</label>
+            <select name="CategoryID" class="form-control" required>
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option value="@category.CategoryID">@category.Name</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Upload Image</label>
+            <input type="file" name="imageFile" class="form-control" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+</div>

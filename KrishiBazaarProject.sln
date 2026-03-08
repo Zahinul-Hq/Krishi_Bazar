@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrishiBazaarProject", "KrishiBazaarProject.csproj", "{F07EA1A2-721E-441D-B14B-6717A3BE8CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KrishiBazaar.Tests", "..\KrishiBazaar.Tests\KrishiBazaar.Tests.csproj", "{13576562-838D-4BC9-834F-CD98EF93A5E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F07EA1A2-721E-441D-B14B-6717A3BE8CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07EA1A2-721E-441D-B14B-6717A3BE8CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07EA1A2-721E-441D-B14B-6717A3BE8CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07EA1A2-721E-441D-B14B-6717A3BE8CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13576562-838D-4BC9-834F-CD98EF93A5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13576562-838D-4BC9-834F-CD98EF93A5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13576562-838D-4BC9-834F-CD98EF93A5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13576562-838D-4BC9-834F-CD98EF93A5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F4F28DB-3413-4193-ACC9-1901774A823C}
+	EndGlobalSection
+EndGlobal

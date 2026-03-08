@@ -1,0 +1,93 @@
+﻿/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.track-order-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.track-order-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Order Route */
+.order-route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    overflow-x: auto;
+}
+
+/* Route Boxes */
+.route-box {
+    width: 200px;
+    min-height: 120px;
+    background: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .route-box:hover {
+        transform: scale(1.05);
+        background-color: #e9f5e9;
+    }
+
+/* Connecting Line */
+.order-route::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background-color: #4CAF50;
+    z-index: -1;
+}
+
+/* Icons */
+.route-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-route {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+        .order-route::before {
+            display: none;
+        }
+
+    .route-box {
+        width: 90%;
+    }
+}

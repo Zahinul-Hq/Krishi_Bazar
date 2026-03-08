@@ -1,0 +1,96 @@
+﻿@model KrishiBazaarProject.ViewModels.ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<head>
+    
+    <link rel="stylesheet" href="~/css/BuyerDashboard/ProductDetailsStyles.css" />
+</head>
+
+<div class="main-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h3 class="sidebar-title">Dashboard</h3>
+        <ul class="sidebar-menu">
+            <li><a href="@Url.Action("Index", "BuyerDashboard")">Home</a></li>
+            <li><a href="@Url.Action("TrackOrders", "BuyerDashboard")">Track My Orders</a></li>
+            <li><a href="@Url.Action("DeliveredOrders", "BuyerDashboard")">Delivered Orders</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="@Url.Action("Cart", "BuyerDashboard")">Cart</a></li>
+            <li>
+                <form asp-action="Logout" asp-controller="Auth" method="post" style="display: inline;">
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Product Details Section -->
+    <div class="product-details-container">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        }
+        <div class="product-card">
+            <div class="product-image">
+                <img src="@Model.Photos" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h2>@Model.Name</h2>
+                <p class="description">@Model.Description</p>
+                <p class="price">Price per unit: <strong>@Model.PricePerUnit</strong></p>
+                <p class="stock">Available Quantity: <strong>@Model.AvailableQuantity</strong></p>
+
+                <h4>Farmer Details</h4>
+                <div class="farmer-details">
+                    <p><strong>Name:</strong> @Model.Farmer.FullName</p>
+                    <p><strong>Email:</strong> @Model.Farmer.Email</p>
+                    <p><strong>Phone:</strong> @Model.Farmer.PhoneNumber</p>
+                </div>
+
+                <h4>Average Rating: ⭐ @Model.AverageRating.ToString("0.0") / 5</h4>
+
+                <form method="post" asp-action="AddToCart" asp-controller="BuyerDashboard" class="add-to-cart-form">
+                    <input type="hidden" name="productId" value="@Model.ProductID" />
+                    <div class="input-group">
+                        <label for="quantity">Enter Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="@Model.AvailableQuantity" required>
+                    </div>
+                    <p class="total-price">Total Price: <span id="totalPrice">0</span></p>
+
+                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="reviews-section">
+            <h3>Customer Reviews</h3>
+            @if (Model.Reviews.Count > 0)
+            {
+                foreach (var review in Model.Reviews)
+                {
+                    <div class="review-card">
+                        <p><strong>@review.BuyerName</strong> - ⭐ @review.Rating / 5</p>
+                        <p>@review.Comment</p>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No reviews yet.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("quantity").addEventListener("input", function () {
+        let pricePerUnit = @Model.PricePerUnit;
+        let quantity = this.value;
+        document.getElementById("totalPrice").innerText = (pricePerUnit * quantity).toFixed(2);
+    });
+</script>
