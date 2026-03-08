@@ -97,7 +97,9 @@ The system is divided into several functional modules:
 - Messaging & Feedback
 - Admin Control
 
+```
 docs/images/system_architecture.png
+```
 
 
 
@@ -126,7 +128,9 @@ The system uses a relational database structure to manage marketplace data.
 | Admin | Administrative access |
 
 ### ER Diagram
+```
 docs/images/database_schema.png
+```
 
 # Logistics Model
 
