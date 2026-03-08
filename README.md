@@ -133,16 +133,17 @@ docs/images/database_schema.png
 Krishi Bazaar uses a **hub-based logistics architecture** to support efficient delivery across different regions.
 
 The process flow:
+
 Farmer
-  ↓
+↓
 Secondary Hub (Seller Region)
-  ↓
+↓
 Primary Hub
-  ↓
+↓
 Primary Hub (Destination City)
-  ↓
+↓
 Secondary Hub (Buyer Region)
-  ↓
+↓
 Customer Delivery
 
 
@@ -166,11 +167,8 @@ Customer Delivery
 KrishiBazaar
 │
 ├── Controllers
-│
 ├── Models
-│
 ├── Views
-│
 ├── Database
 │
 ├── wwwroot
